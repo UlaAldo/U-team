@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		C17A1A2327B5ED13000FE787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A2227B5ED13000FE787 /* AppDelegate.swift */; };
 		C17A1A2527B5ED13000FE787 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A2427B5ED13000FE787 /* SceneDelegate.swift */; };
-		C17A1A2727B5ED13000FE787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A2627B5ED13000FE787 /* ViewController.swift */; };
+		C17A1A2727B5ED13000FE787 /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A2627B5ED13000FE787 /* OperationViewController.swift */; };
 		C17A1A2A27B5ED13000FE787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17A1A2827B5ED13000FE787 /* Main.storyboard */; };
 		C17A1A2C27B5ED14000FE787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17A1A2B27B5ED14000FE787 /* Assets.xcassets */; };
 		C17A1A2F27B5ED14000FE787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17A1A2D27B5ED14000FE787 /* LaunchScreen.storyboard */; };
+		C17A1A3C27B5EE0F000FE787 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A3B27B5EE0F000FE787 /* Operation.swift */; };
+		C17A1A3E27B5F8F2000FE787 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A3D27B5F8F2000FE787 /* HistoryViewController.swift */; };
+		C17A1A4027B5FA97000FE787 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A3F27B5FA97000FE787 /* TeamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C17A1A1F27B5ED13000FE787 /* U-team.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "U-team.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17A1A2227B5ED13000FE787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17A1A2427B5ED13000FE787 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C17A1A2627B5ED13000FE787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C17A1A2627B5ED13000FE787 /* OperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		C17A1A2927B5ED13000FE787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C17A1A2B27B5ED14000FE787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C17A1A2E27B5ED14000FE787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C17A1A3027B5ED14000FE787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C17A1A3B27B5EE0F000FE787 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		C17A1A3D27B5F8F2000FE787 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = "U-team/Storyboards/HistoryViewController.swift"; sourceTree = SOURCE_ROOT; };
+		C17A1A3F27B5FA97000FE787 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamViewController.swift; path = "U-team/Storyboards/TeamViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		C17A1A2127B5ED13000FE787 /* U-team */ = {
 			isa = PBXGroup;
 			children = (
-				C17A1A2227B5ED13000FE787 /* AppDelegate.swift */,
-				C17A1A2427B5ED13000FE787 /* SceneDelegate.swift */,
-				C17A1A2627B5ED13000FE787 /* ViewController.swift */,
-				C17A1A2827B5ED13000FE787 /* Main.storyboard */,
-				C17A1A2B27B5ED14000FE787 /* Assets.xcassets */,
-				C17A1A2D27B5ED14000FE787 /* LaunchScreen.storyboard */,
-				C17A1A3027B5ED14000FE787 /* Info.plist */,
+				C17A1A3727B5ED67000FE787 /* Models */,
+				C17A1A3627B5ED45000FE787 /* ViewControllers */,
+				C17A1A3827B5ED80000FE787 /* Storyboards */,
+				C17A1A3927B5ED99000FE787 /* App */,
+				C17A1A3A27B5EDA8000FE787 /* Resourses */,
 			);
 			path = "U-team";
+			sourceTree = "<group>";
+		};
+		C17A1A3627B5ED45000FE787 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C17A1A3F27B5FA97000FE787 /* TeamViewController.swift */,
+				C17A1A3D27B5F8F2000FE787 /* HistoryViewController.swift */,
+				C17A1A2627B5ED13000FE787 /* OperationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C17A1A3727B5ED67000FE787 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C17A1A3B27B5EE0F000FE787 /* Operation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C17A1A3827B5ED80000FE787 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C17A1A2827B5ED13000FE787 /* Main.storyboard */,
+				C17A1A2D27B5ED14000FE787 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C17A1A3927B5ED99000FE787 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C17A1A2227B5ED13000FE787 /* AppDelegate.swift */,
+				C17A1A2427B5ED13000FE787 /* SceneDelegate.swift */,
+				C17A1A3027B5ED14000FE787 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C17A1A3A27B5EDA8000FE787 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				C17A1A2B27B5ED14000FE787 /* Assets.xcassets */,
+			);
+			path = Resourses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C17A1A2727B5ED13000FE787 /* ViewController.swift in Sources */,
+				C17A1A2727B5ED13000FE787 /* OperationViewController.swift in Sources */,
+				C17A1A4027B5FA97000FE787 /* TeamViewController.swift in Sources */,
 				C17A1A2327B5ED13000FE787 /* AppDelegate.swift in Sources */,
 				C17A1A2527B5ED13000FE787 /* SceneDelegate.swift in Sources */,
+				C17A1A3E27B5F8F2000FE787 /* HistoryViewController.swift in Sources */,
+				C17A1A3C27B5EE0F000FE787 /* Operation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +343,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GJ8322288B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "U-team/Info.plist";
+				INFOPLIST_FILE = "U-team/App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MK;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +372,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GJ8322288B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "U-team/Info.plist";
+				INFOPLIST_FILE = "U-team/App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MK;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
