@@ -9,36 +9,8 @@
 struct Operation {
     var sum: Int
     let type: OperationType
-    let categories: [String]
-    
-    static func getOperationIncome() -> Operation {
-            Operation(
-                sum: 0,
-                type: .income,
-                categories: [
-                    "Зарплата",
-                    "Подарок",
-                    "Перевод"
-                ]
-            )
-                }
-          
-    static func getOperationExpense() -> Operation {
-            Operation(
-                sum: 0,
-                type: .expense,
-                categories: [
-                    "Продукты",
-                    "Рестораны",
-                    "Одежда",
-                    "Транспорт",
-                    "Фитнес",
-                    "Здоровье"
-                ]
-            )
-    }
+    let categories: String
 }
-
 enum OperationType: String {
     case income = "Доход"
     case expense = "Расход"
