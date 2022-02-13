@@ -15,5 +15,3 @@ enum OperationType: String {
     case income = "Доход"
     case expense = "Расход"
 }
-
-
