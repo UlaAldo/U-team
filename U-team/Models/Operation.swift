@@ -9,9 +9,9 @@
 struct Operation {
     var sum: Int
     let type: OperationType
-    let categories: String
+    let category: String
 }
 enum OperationType: String {
-    case income = "Доход"
-    case expense = "Расход"
+    case income
+    case expense
 }
