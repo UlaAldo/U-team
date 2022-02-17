@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C111A53127BE009400540B07 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111A53027BE009400540B07 /* DataManager.swift */; };
 		C17A1A2327B5ED13000FE787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A2227B5ED13000FE787 /* AppDelegate.swift */; };
 		C17A1A2527B5ED13000FE787 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A2427B5ED13000FE787 /* SceneDelegate.swift */; };
 		C17A1A2727B5ED13000FE787 /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A1A2627B5ED13000FE787 /* OperationViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C111A53027BE009400540B07 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C17A1A1F27B5ED13000FE787 /* U-team.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "U-team.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17A1A2227B5ED13000FE787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17A1A2427B5ED13000FE787 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C17A1A3B27B5EE0F000FE787 /* Operation.swift */,
+				C111A53027BE009400540B07 /* DataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				C17A1A2727B5ED13000FE787 /* OperationViewController.swift in Sources */,
 				C17A1A4027B5FA97000FE787 /* TeamViewController.swift in Sources */,
 				C17A1A2327B5ED13000FE787 /* AppDelegate.swift in Sources */,
+				C111A53127BE009400540B07 /* DataManager.swift in Sources */,
 				C17A1A2527B5ED13000FE787 /* SceneDelegate.swift in Sources */,
 				C17A1A3E27B5F8F2000FE787 /* HistoryViewController.swift in Sources */,
 				C17A1A3C27B5EE0F000FE787 /* Operation.swift in Sources */,

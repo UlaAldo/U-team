@@ -15,12 +15,12 @@ class HistoryViewController: UITableViewController {
     
     
     var test = [
-        Operation(sum: -500, type: .expense, categories: ["Продукты"]),
-        Operation(sum: 15_000, type: .income, categories: ["Зарплата"]),
-        Operation(sum: -3_000, type: .expense, categories: ["Одежда"]),
-        Operation(sum: 20_000, type: .income, categories: ["Перевод"]),
-        Operation(sum: -1_000, type: .expense, categories: ["Образование"]),
-        Operation(sum: 18_000, type: .income, categories: ["Подарок"]),
+        Operation(sum: -500, type: .expense, category: "Продукты"),
+        Operation(sum: 15_000, type: .income, category: "Зарплата"),
+        Operation(sum: -3_000, type: .expense, category: "Одежда"),
+        Operation(sum: 20_000, type: .income, category: "Перевод"),
+        Operation(sum: -1_000, type: .expense, category: "Образование"),
+        Operation(sum: 18_000, type: .income, category: "Подарок"),
     ]
 // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -80,7 +80,7 @@ class HistoryViewController: UITableViewController {
             cell.backgroundColor = UIColor(red: 0.946, green: 0.907, blue: 0.871, alpha: 1)
         }
         
-        content.text = myCell.categories.first
+        content.text = myCell.category
         content.secondaryText = "\(format(for: myCell.sum)) ₽"
         
 //        if test.type == .income {
@@ -91,7 +91,7 @@ class HistoryViewController: UITableViewController {
         
         content.secondaryTextProperties.font = .systemFont(ofSize: 35)
         content.secondaryTextProperties.color = .black
-        content.image = UIImage(named: myCell.categories.first!)
+        content.image = UIImage(named: myCell.category)
         
         cell.contentConfiguration = content
         return cell
