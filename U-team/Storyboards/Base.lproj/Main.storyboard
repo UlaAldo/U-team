@@ -183,9 +183,9 @@
                                     <segue destination="par-o1-gtn" kind="presentation" modalPresentationStyle="fullScreen" id="WV5-Lw-WOb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="при поддержке дизайнера Влада Алдохина" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHv-nA-xOv">
-                                <rect key="frame" x="98" y="455.5" width="218.5" height="41"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="при участии дизайнера Влада Алдохина" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHv-nA-xOv">
+                                <rect key="frame" x="100.5" y="455.5" width="213.5" height="45.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -204,7 +204,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="projectLabel" destination="19p-1V-4va" id="yHY-jT-3hq"/>
+                        <outlet property="projectButton" destination="19p-1V-4va" id="yHY-jT-3hq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucR-hD-oaZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -13,6 +13,7 @@ class HistoryViewController: UITableViewController {
     @IBOutlet var balanceLabel: UILabel!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    var operation: Operation!
     
     var test = [
         Operation(sum: -500, type: .expense, category: "Продукты"),
@@ -37,10 +38,8 @@ class HistoryViewController: UITableViewController {
 //        белый цвет текста в segmentControl
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-//        segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
         
         segmentedControl.selectedSegmentTintColor = UIColor(red: 0.424, green: 0.457, blue: 0.55, alpha: 1)
-        
        }
 
 
@@ -82,13 +81,6 @@ class HistoryViewController: UITableViewController {
         
         content.text = myCell.category
         content.secondaryText = "\(format(for: myCell.sum)) ₽"
-        
-//        if test.type == .income {
-//            content.secondaryText = "+ \(test.sum) ₽"
-//        } else {
-//                content.secondaryText = "- \(test.sum) ₽"
-//            }
-        
         content.secondaryTextProperties.font = .systemFont(ofSize: 35)
         content.secondaryTextProperties.color = .black
         content.image = UIImage(named: myCell.category)
@@ -107,14 +99,7 @@ class HistoryViewController: UITableViewController {
            test.remove(at: indexPath.row)
            self.tableView.reloadData()
            balanceLabel.text = "Баланс: \(getSumTest()) ₽"
-           
-//           if remote.type == .expense {
-//               balanceLabel.text = "balance: \(balance + remote.sum)"
-//           } else {
-//               balanceLabel.text = "balance: \(balance - remote.sum)"
-//           }
-//       }
-    }
+       }
     }
 // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

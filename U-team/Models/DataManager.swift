@@ -26,4 +26,5 @@ class DataManager {
         "Рестораны",
         "Образование"
     ]
+    private init() {}
 }
