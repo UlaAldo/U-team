@@ -44,4 +44,5 @@ enum OperationType: String {
     case expense = "Расход"
 }
 
+var test = Operation.getOperationIncome()
 
