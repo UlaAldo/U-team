@@ -15,14 +15,9 @@ class HistoryViewController: UITableViewController {
     
     var operation: Operation!
     
-    var test = [
-        Operation(sum: -500, type: .expense, category: "Продукты"),
-        Operation(sum: 15_000, type: .income, category: "Зарплата"),
-        Operation(sum: -3_000, type: .expense, category: "Одежда"),
-        Operation(sum: 20_000, type: .income, category: "Перевод"),
-        Operation(sum: -1_000, type: .expense, category: "Образование"),
-        Operation(sum: 18_000, type: .income, category: "Подарок"),
-    ]
+    private var historyOperations: [Operation] = []
+    
+    
 // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,28 +43,28 @@ class HistoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-             return test.count
+             return historyOperations.count
         case 1:
-           return test.filter{$0.type == .expense}.count
-       default:
-            return test.filter{$0.type == .income}.count
+           return historyOperations.filter{$0.type == .expense}.count
+        default:
+            return historyOperations.filter{$0.type == .income}.count
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var content = cell.defaultContentConfiguration()
-        var myCell = test[indexPath.row]
+        var myCell = historyOperations[indexPath.row]
         
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            myCell = test[indexPath.row]
+            myCell = historyOperations[indexPath.row]
             balanceLabel.text = "Баланс: \(getSumTest()) ₽"
         case 1:
-            myCell = test.filter{$0.type == .expense}[indexPath.row]
+            myCell = historyOperations.filter{$0.type == .expense}[indexPath.row]
             balanceLabel.text = "Расход: \(getSumExpense()) ₽"
         default:
-            myCell = test.filter{$0.type == .income}[indexPath.row]
+            myCell = historyOperations.filter{$0.type == .income}[indexPath.row]
             balanceLabel.text = "Доход: \(getSumIncome()) ₽"
         }
         
@@ -95,17 +90,18 @@ class HistoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-       if editingStyle == .delete {
-           test.remove(at: indexPath.row)
+        if editingStyle == .delete {
+           historyOperations.remove(at: indexPath.row)
            self.tableView.reloadData()
            balanceLabel.text = "Баланс: \(getSumTest()) ₽"
        }
     }
 // MARK: - Table view delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    // округление углов ячейки + расстояние между ячейками
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let verticalPadding: CGFloat = 8
         let maskLayer = CALayer()
@@ -117,7 +113,6 @@ class HistoryViewController: UITableViewController {
                                  height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
         cell.layer.mask = maskLayer
     }
-// MARK: - Navigation
 
 // MARK: - IB Action
     @IBAction func choiceSegment() {
@@ -125,25 +120,30 @@ class HistoryViewController: UITableViewController {
     }
     
 // MARK: - Private Method
+    
+    private func addOperationForHistory() {
+        historyOperations.append(operation)
+    }
     //    функция добавления разделителя тысяч в Int
-        private func format(for num: Int) -> String {
-            let formatter = NumberFormatter()
-            formatter.groupingSeparator = " "
-            formatter.numberStyle = .decimal
-            return formatter.string(for: num) ?? "\(num)"
+    private func format(for num: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = " "
+        formatter.numberStyle = .decimal
+        return formatter.string(for: num) ?? "\(num)"
         }
+    
     // функции для подсчета баланса
-        private func getSumTest() -> String {
-            let sum = test.map{$0.sum}.reduce(0, +)
-            return format(for: sum)
+    private func getSumTest() -> String {
+        let sum = historyOperations.map{$0.sum}.reduce(0, +)
+        return format(for: sum)
         }
-        private func getSumExpense() -> String {
-            let sum = test.filter{$0.type == .expense}.map{$0.sum}.reduce(0, +)
-            return format(for: sum)
+    private func getSumExpense() -> String {
+        let sum = historyOperations.filter{$0.type == .expense}.map{$0.sum}.reduce(0, +)
+        return format(for: sum)
         }
-        private func getSumIncome() -> String {
-            let sum = test.filter{$0.type == .income}.map{$0.sum}.reduce(0, +)
-            return format(for: sum)
+    private func getSumIncome() -> String {
+        let sum = historyOperations.filter{$0.type == .income}.map{$0.sum}.reduce(0, +)
+        return format(for: sum)
         }
 
         

@@ -48,7 +48,6 @@
 		2B2F722727B9817700CFCB90 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2B2F722527B9816900CFCB90 /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
