@@ -15,7 +15,6 @@ class TeamViewController: UIViewController {
         super.viewDidLoad()
         projectButton.layer.cornerRadius = 10
         view.backgroundColor = UIColor(red: 0.946, green: 0.907, blue: 0.871, alpha: 1)
-
     }
     
 }

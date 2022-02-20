@@ -15,12 +15,13 @@ class HistoryViewController: UITableViewController {
     
     var operation: Operation!
     
-    private var historyOperations: [Operation] = []
+    var historyOperations: [Operation] = []
     
     
 // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.rowHeight = 80
         view.backgroundColor = UIColor(red: 0.192, green: 0.208, blue: 0.251, alpha: 1)
         
@@ -118,10 +119,12 @@ class HistoryViewController: UITableViewController {
     @IBAction func choiceSegment() {
         self.tableView.reloadData()
     }
+
     
 // MARK: - Private Method
     
     private func addOperationForHistory() {
+        guard let operation = operation else { return }
         historyOperations.append(operation)
     }
     //    функция добавления разделителя тысяч в Int
