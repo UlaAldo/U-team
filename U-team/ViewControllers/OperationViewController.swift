@@ -23,6 +23,9 @@ class OperationViewController: UIViewController {
     
     @IBOutlet var addButton: UIButton!
     
+    // MARK: - public properties
+    var operations: [Operation] = []
+    
     // MARK: - Private properties
     private var operation: Operation!
     
@@ -55,7 +58,7 @@ class OperationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigationVC = segue.destination as? UINavigationController else { return }
         guard let historyVC = navigationVC.topViewController as? HistoryViewController else { return }
-        historyVC.operation = operation
+        historyVC.historyOperations = operations.reversed()
     }
     
     // MARK: - IB Actions
@@ -82,6 +85,16 @@ class OperationViewController: UIViewController {
         case .none:
             showAlert(title: "Что-то пошло не так", message: "Проверьте все поля")
         }
+        operations.append(operation)
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        sumTextField.text = ""
+        categoryTextField.text = ""
+        categoryImageView.image = UIImage(named: "")
+        
+        guard let historyVC = segue.source as? HistoryViewController else { return }
+        operations = historyVC.historyOperations.reversed()
     }
     
     // MARK: - Private methods
