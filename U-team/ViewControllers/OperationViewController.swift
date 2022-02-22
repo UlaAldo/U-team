@@ -25,6 +25,7 @@ class OperationViewController: UIViewController {
     
     // MARK: - public properties
     var operations: [Operation] = []
+    var delegate: OperTabBarViewController!
     
     // MARK: - Private properties
     private var operation: Operation!
@@ -54,11 +55,13 @@ class OperationViewController: UIViewController {
         setupSegmentedControlTextColor()
     }
     
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigationVC = segue.destination as? UINavigationController else { return }
         guard let historyVC = navigationVC.topViewController as? HistoryViewController else { return }
-        historyVC.historyOperations = operations.reversed()
+        
+        historyVC.historyOperations = operations
     }
     
     // MARK: - IB Actions
@@ -69,12 +72,12 @@ class OperationViewController: UIViewController {
     @IBAction func addButtonPressed() {
         guard let sumText = sumTextField.text else {return}
         guard let category = categoryTextField.text else {return}
-        if sumText.isEmpty {
+        
+        if sumText.isEmpty || category.isEmpty {
             showAlert(title: "Неверный ввод!", message: "Проверьте все поля")
+            return
         }
-        if category.isEmpty {
-            showAlert(title: "Неверный ввод!", message: "Проверьте все поля")
-        }
+        
         guard let sum = Int(sumText) else {return}
         
         switch currentType {
@@ -85,7 +88,8 @@ class OperationViewController: UIViewController {
         case .none:
             showAlert(title: "Что-то пошло не так", message: "Проверьте все поля")
         }
-        operations.append(operation)
+        operations.insert(operation, at: 0)
+        delegate.getHistoryList(with: operations)
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -94,7 +98,7 @@ class OperationViewController: UIViewController {
         categoryImageView.image = UIImage(named: "")
         
         guard let historyVC = segue.source as? HistoryViewController else { return }
-        operations = historyVC.historyOperations.reversed()
+        operations = historyVC.historyOperations
     }
     
     // MARK: - Private methods
