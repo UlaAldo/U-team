@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class HistoryViewController: UITableViewController {
  
 // MARK: - IB Outlets
@@ -15,12 +16,15 @@ class HistoryViewController: UITableViewController {
     
     var operation: Operation!
     
+    var delegate: OperTabBarViewController!
+    
     var historyOperations: [Operation] = []
     
     
 // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         tableView.rowHeight = 80
         view.backgroundColor = UIColor(red: 0.192, green: 0.208, blue: 0.251, alpha: 1)
@@ -37,6 +41,10 @@ class HistoryViewController: UITableViewController {
         
         segmentedControl.selectedSegmentTintColor = UIColor(red: 0.424, green: 0.457, blue: 0.55, alpha: 1)
        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
 
 // MARK: - Table view data source
@@ -92,10 +100,12 @@ class HistoryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-           historyOperations.remove(at: indexPath.row)
-           self.tableView.reloadData()
-           balanceLabel.text = "Баланс: \(getSumTest()) ₽"
-       }
+            historyOperations.remove(at: indexPath.row)
+            self.tableView.reloadData()
+            balanceLabel.text = "Баланс: \(getSumTest()) ₽"
+            
+            delegate.getHistoryList(with: historyOperations)
+        }
     }
 // MARK: - Table view delegate
     
@@ -119,14 +129,10 @@ class HistoryViewController: UITableViewController {
     @IBAction func choiceSegment() {
         self.tableView.reloadData()
     }
-
     
 // MARK: - Private Method
     
-    private func addOperationForHistory() {
-        guard let operation = operation else { return }
-        historyOperations.append(operation)
-    }
+
     //    функция добавления разделителя тысяч в Int
     private func format(for num: Int) -> String {
         let formatter = NumberFormatter()
@@ -149,7 +155,5 @@ class HistoryViewController: UITableViewController {
         return format(for: sum)
         }
 
-        
 }
-
 
