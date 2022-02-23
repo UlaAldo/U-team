@@ -56,9 +56,6 @@
                                         <rect key="frame" x="8" y="8" width="388" height="233"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
-                                        <connections>
-                                            <action selector="sumTextFormated" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Fei-nt-g4f"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
