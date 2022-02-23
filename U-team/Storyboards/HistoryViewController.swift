@@ -14,8 +14,6 @@ class HistoryViewController: UITableViewController {
     @IBOutlet var balanceLabel: UILabel!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
-    var operation: Operation!
-    
     var delegate: OperTabBarViewController!
     
     var historyOperations: [Operation] = []
@@ -24,7 +22,6 @@ class HistoryViewController: UITableViewController {
 // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         tableView.rowHeight = 80
         view.backgroundColor = UIColor(red: 0.192, green: 0.208, blue: 0.251, alpha: 1)
@@ -40,7 +37,18 @@ class HistoryViewController: UITableViewController {
         segmentedControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
         
         segmentedControl.selectedSegmentTintColor = UIColor(red: 0.424, green: 0.457, blue: 0.55, alpha: 1)
+    
        }
+    override func viewWillLayoutSubviews() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            balanceLabel.text = "Баланс: \(getSumTest()) ₽"
+        case 1:
+            balanceLabel.text = "Расход: \(getSumExpense()) ₽"
+        default:
+            balanceLabel.text = "Доход: \(getSumIncome()) ₽"
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -103,10 +111,11 @@ class HistoryViewController: UITableViewController {
             historyOperations.remove(at: indexPath.row)
             self.tableView.reloadData()
             balanceLabel.text = "Баланс: \(getSumTest()) ₽"
-            
             delegate.getHistoryList(with: historyOperations)
         }
     }
+
+    
 // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -132,8 +141,7 @@ class HistoryViewController: UITableViewController {
     
 // MARK: - Private Method
     
-
-    //    функция добавления разделителя тысяч в Int
+    //  функция добавления разделителя тысяч в Int
     private func format(for num: Int) -> String {
         let formatter = NumberFormatter()
         formatter.groupingSeparator = " "

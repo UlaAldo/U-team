@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		2B160EED27C3E5DF00760B8A /* OperTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperTabBarViewController.swift; sourceTree = "<group>"; };
-		C111A53027BE009400540B07 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C111A53027BE009400540B07 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../Models/DataManager.swift; sourceTree = "<group>"; };
 		C17A1A1F27B5ED13000FE787 /* U-team.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "U-team.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17A1A2227B5ED13000FE787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17A1A2427B5ED13000FE787 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +50,7 @@
 		2B2F722727B9817700CFCB90 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C111A53027BE009400540B07 /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -86,10 +87,10 @@
 		C17A1A3627B5ED45000FE787 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2B160EED27C3E5DF00760B8A /* OperTabBarViewController.swift */,
 				C17A1A3F27B5FA97000FE787 /* TeamViewController.swift */,
-				C17A1A3D27B5F8F2000FE787 /* HistoryViewController.swift */,
+				2B160EED27C3E5DF00760B8A /* OperTabBarViewController.swift */,
 				C17A1A2627B5ED13000FE787 /* OperationViewController.swift */,
+				C17A1A3D27B5F8F2000FE787 /* HistoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -98,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				C17A1A3B27B5EE0F000FE787 /* Operation.swift */,
-				C111A53027BE009400540B07 /* DataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

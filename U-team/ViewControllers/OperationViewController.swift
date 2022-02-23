@@ -62,6 +62,7 @@ class OperationViewController: UIViewController {
         guard let historyVC = navigationVC.topViewController as? HistoryViewController else { return }
         
         historyVC.historyOperations = operations
+        historyVC.delegate = delegate
     }
     
     // MARK: - IB Actions
@@ -205,6 +206,7 @@ extension OperationViewController: UITextFieldDelegate {
                                             target: nil,
                                             action: nil)
         toolbar.items = [flexBarButton, doneButton]
+        
     }
     
     @objc func dismissKeyboard() {
