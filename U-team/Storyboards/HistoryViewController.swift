@@ -103,7 +103,7 @@ class HistoryViewController: UITableViewController {
     
     //    функция удаления ячеек
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        true
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -136,7 +136,7 @@ class HistoryViewController: UITableViewController {
 
 // MARK: - IB Action
     @IBAction func choiceSegment() {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
 // MARK: - Private Method

@@ -94,8 +94,7 @@ class OperationViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        sumTextField.text = ""
-        categoryTextField.text = ""
+        isEmptyField()
         categoryImageView.image = UIImage(named: "")
         
         guard let historyVC = segue.source as? HistoryViewController else { return }
@@ -103,10 +102,14 @@ class OperationViewController: UIViewController {
     }
     
     // MARK: - Private methods
+    private func isEmptyField() {
+        sumTextField.text = ""
+        categoryTextField.text = ""
+    }
+    
     private func choiceCategory() {
         let elementPicker = UIPickerView()
         elementPicker.delegate = self
-        
         categoryTextField.inputView = elementPicker
     }
     
@@ -116,8 +119,7 @@ class OperationViewController: UIViewController {
         switch operationSegmentedControl.selectedSegmentIndex {
         case 0:
             view.endEditing(true)
-            categoryTextField.text = ""
-            sumTextField.text = ""
+            isEmptyField()
             
             currentCategories = DataManager.share.expenseCategories
             currentType = .expense
@@ -126,8 +128,7 @@ class OperationViewController: UIViewController {
             
         default:
             view.endEditing(true)
-            categoryTextField.text = ""
-            sumTextField.text = ""
+            isEmptyField()
             
             currentCategories = DataManager.share.incomeCategories
             currentType = .income
