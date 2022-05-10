@@ -1,5 +1,4 @@
-# U-team : командное приложение
-Money Keeper : учет доходов и расходов по категориям
+# U-team : командное приложение Money Keeper : учет доходов и расходов по категориям
 <img width="363" alt="1" src="https://user-images.githubusercontent.com/90995165/167603354-4986db79-fe8c-497f-94b5-d0af52f8367a.png">
 <img width="368" alt="2" src="https://user-images.githubusercontent.com/90995165/167603394-5dba5051-57d4-4eee-823a-de9f9ac330fa.png">
 <img width="365" alt="3" src="https://user-images.githubusercontent.com/90995165/167603431-0884d1d7-8c21-4d34-95c3-a936ebd23dd4.png">
