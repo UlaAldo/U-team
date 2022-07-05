@@ -1,6 +1,8 @@
 # U-team : командное приложение Money Keeper : при участии UI/UX дизайнера.
 Учет доходов и расходов по категориям.
 
+Архитектура MVC.
+
 Прототип интерфейса был сделан дизайнером в Figma.
 
 <img width="369" alt="6" src="https://user-images.githubusercontent.com/90995165/173980136-8ad331e0-4fb5-4e64-bb3d-0776f3caa01a.png">
